@@ -63,13 +63,13 @@ void app_main(void) {
 	while(1) {
 
 			set_dac_output_voltage( DAC_EXAMPLE_CHANNEL, dac_set_point );
-			//get_span_pct_string(ADC1_EXAMPLE_CHANNEL,span);
-			get_voltage_string(ADC1_EXAMPLE_CHANNEL,span);
+			get_span_pct_string(ADC1_EXAMPLE_CHANNEL,span);
+			//get_voltage_string(ADC1_EXAMPLE_CHANNEL,span);
 			dac_set_point++;
 
-			strcpy(oled_message, "  Stone Tablet  \n\nVoltage ");
+			strcpy(oled_message, "  Stone Tablet  \n\Moisture ");
 			strcat(oled_message,span);
-			strcat(oled_message," VDC");
+			strcat(oled_message," %");
 			oled_display_text(oled_message);
 
 			vTaskDelay( 2 * portTICK_PERIOD_MS );
